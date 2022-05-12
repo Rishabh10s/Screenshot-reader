@@ -8,13 +8,16 @@ import json
 # Change the screenshot path
 SCREENSHOTS_PATH = r'C:\Users\LENOVO\Pictures\Screenshots'
 
+# Change the tesseract exe path.
+TESSERACT_EXE = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 CURRENT_DIR = os.path.dirname(os.path.abspath(__name__))
 TEMPLATE_FILE_NAME = 'screenshot_template.html'
 RESULTS_PATH = os.path.join(CURRENT_DIR, 'results')
 META_FILE = os.path.join(CURRENT_DIR, 'meta.json')
 
 try:
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    pytesseract.pytesseract.tesseract_cmd = TESSERACT_EXE
 except:
     exit("Failed to load pytesseract library. Please ensure that you have install tesseract on your system.")
 
